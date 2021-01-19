@@ -6,29 +6,38 @@ header {
   background-color: #050505;
   color: #fafafa;
   font: 20px "Poppins", sans-serif;
-  padding: 15px;
+  padding: 15px 50px;
 }
 
-h1 {
+header span {
+  float: right;
+}
+main {
+  margin: 120px 50px;
+}
+
+main h1 {
   color: #3f13a4;
   font: 80px "Roboto Slab", serif;
-  margin: 100px 50px 10px;
 }
 
-p {
+main p {
   color: #050505;
   font: 30px "Poppins", sans-serif;
-  margin: 20px 50px;
 }
 
 footer {
   color: #050505;
-  font: 10px "Poppins", sans-serif;
-  margin-top: 130px;
+  font: 20px "Poppins", sans-serif;
+  margin: 30px 50px;
 }
 
 a {
   color: #6b35e8;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
+}
+
+a:hover {
+  color: #3f13a4;
 }
