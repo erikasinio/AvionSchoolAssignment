@@ -1,0 +1,192 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="surveyform.css" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <!-- BACKGROUND -->
+    <header>
+      <h1 id="title">BOOK CLUB SURVEY</h1>
+      <p id="description"><i>A short survey for new book club members</i></p>
+    </header>
+
+    <!-- FORM -->
+    <form action="#" id="survey-form">
+      <!-- NAME -->
+      <div class="form-item">
+        <label for="name" class="label-head" id="name-label">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          pattern="[a-zA-Z]+"
+          title="Enter letters only"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+
+      <!-- EMAIL -->
+      <div class="form-item">
+        <label for="email" class="label-head" id="email-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          pattern=".+.com"
+          title="characters@characters.domain"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+
+      <!-- AGE -->
+      <div class="form-item">
+        <label for="number" class="label-head" id="number-label">Age</label>
+        <input
+          type="number"
+          name="number"
+          id="number"
+          pattern="[0-9]{11}"
+          title="09xxxxxxxxx"
+          placeholder="Enter your age"
+          required
+        />
+      </div>
+
+      <!-- DROPDOWN -->
+      <div class="form-item">
+        <label for="dropdown" class="label-head"
+          >Where do you live in Pampanga?</label
+        >
+        <select name="dropdown" id="dropdown">
+          <option disabled selected value>Select an option</option>
+          <option value="sf">San Fernando</option>
+          <option value="ang">Angeles</option>
+          <option value="mab">Mabalacat</option>
+          <option value="mex">Mexico</option>
+          <option value="bac">Bacolor</option>
+          <option value="por">Porac</option>
+          <option value="aryt">Arayat</option>
+          <option value="lub">Lubao</option>
+          <option value="can">Candaba</option>
+          <option value="can">Others</option>
+        </select>
+      </div>
+
+      <!-- RADIO -->
+      <div class="form-item">
+        <label for="radio-container"
+          >What time do you prefer to attend daily bookclub meeting?</label
+        >
+        <div id="radio-container">
+          <label for="c1">
+            <input type="radio" id="c1" name="choice" value="" />8:30AM</label
+          >
+          <label for="c2">
+            <input type="radio" id="c2" name="choice" value="" />2:30PM</label
+          >
+          <label for="c3">
+            <input type="radio" id="c3" name="choice" value="" />6:30PM</label
+          >
+        </div>
+      </div>
+
+      <!-- CHECKBOX -->
+      <div class="form-item">
+        <label for="checkbox-container">What genre do you usually read?</label>
+        <div id="checkbox-container">
+          <label for="romance"
+            ><input
+              type="checkbox"
+              id="romance"
+              name="genre"
+              value="romance"
+            />Romance</label
+          >
+          <label for="mystery"
+            ><input
+              type="checkbox"
+              id="mystery"
+              name="genre"
+              value="mystery"
+            />Mystery</label
+          >
+          <label for="fantasyscifi"
+            ><input
+              type="checkbox"
+              id="fantasyscifi"
+              name="genre"
+              value="fantasyscifi"
+            />Fantasy and sci-fi</label
+          >
+          <label for="thrhor"
+            ><input
+              type="checkbox"
+              id="thrhor"
+              name="genre"
+              value="thrhor"
+            />Thriller and horror</label
+          >
+          <label for="youngad"
+            ><input
+              type="checkbox"
+              id="youngad"
+              name="genre"
+              value="youngad"
+            />Young adult</label
+          >
+          <label for="inspirational"
+            ><input
+              type="checkbox"
+              id="inspirational"
+              name="genre"
+              value="inspirational"
+            />Inspirational</label
+          >
+          <label for="bio"
+            ><input
+              type="checkbox"
+              id="bio"
+              name="genre"
+              value="bio"
+            />Biography</label
+          >
+          <label for="nonfic"
+            ><input
+              type="checkbox"
+              id="nonfic"
+              name="genre"
+              value="nonfic"
+            />Non-Fiction</label
+          >
+        </div>
+      </div>
+
+      <!-- TEXTAREA -->
+      <div class="form-item">
+        <label for="comments" class="label-head">Comments or Suggestions</label>
+        <textarea name="comments" id="comments">
+Share your comments or suggestions to improve the book club!</textarea
+        >
+      </div>
+
+      <!-- BUTTON -->
+
+      <button type="submit" value="submit">Submit</button>
+    </form>
+  </body>
+</html>
