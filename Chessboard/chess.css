@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+
+body {
+  background: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.8)),
+    url(wallpapertip_chess-wallpaper_121307.jpg) no-repeat center center/cover;
+  font-family: "Trocchi", serif;
+}
+
+h1 {
+  margin: 20px;
+  color: #fff;
+  font-size: 3vw;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+#main-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 100%;
+}
+
+.whole-board {
+  position: relative;
+  width: inherit;
+  margin: 0 auto;
+  border: 1em solid black;
+}
+
+#chess-frame {
+  max-width: 100%;
+  display: flex;
+}
+
+.odd {
+  background: url(./white-marble.jpg) no-repeat center center/cover;
+  display: flex;
+  height: 5vw;
+  width: 5vw;
+  border: 1px solid black;
+  position: relative;
+}
+
+.even {
+  display: flex;
+  height: 5vw;
+  width: 5vw;
+  border: 1px solid black;
+  position: relative;
+  background: url(./white-marble.jpg) no-repeat center center/cover;
+}
+
+.odd:nth-child(odd) {
+  background: url(./black-marble.jpg) no-repeat center center/cover;
+}
+
+.even:nth-child(even) {
+  background: url(./black-marble.jpg) no-repeat center center/cover;
+}
+
+/* i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #444a46;
+  font-size: 4vw;
+} */
+
+p {
+  position: absolute;
+  font-size: 4.5vw;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #c2c2c2;
+}
+
+.black {
+  color: #444;
+}
+/* .white {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #d9dedb;
+  font-size: 4vw;
+} */
+
+.odd:hover,
+p:hover,
+.even:hover {
+  opacity: 0.9;
+  color: #444;
+}
+
+.odd:nth-child(odd):hover,
+.black:nth-child(odd):hover,
+.even:nth-child(even):hover {
+  opacity: 0.9;
+  color: #c2c2c2;
+}
