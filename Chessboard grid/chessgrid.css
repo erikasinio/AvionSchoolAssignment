@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#empty {
+  background-color: red;
+}
+body {
+  background-color: #fff;
+  font-family: "Trocchi", serif;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 10px auto;
+  text-align: center;
+  font-size: 2em;
+}
+
+.main-board {
+  background-color: #150322;
+  width: 500px;
+  height: 500px;
+  border: 10px solid #150322;
+  margin: 20px auto;
+  display: grid;
+  padding: 10px;
+  box-shadow: -1px 10px 38px 0px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: -1px 10px 38px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: -1px 10px 38px 0px rgba(0, 0, 0, 0.6);
+}
+
+.chess-grid {
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  border: 1px solid #150322;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+}
+
+.grid-element {
+  background: rgb(231, 219, 240);
+  background: radial-gradient(
+    circle,
+    rgba(231, 219, 240, 1) 65%,
+    rgba(179, 154, 199, 1) 100%
+  );
+  border: 1px solid #150322;
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.grid-element:nth-child(-n + 8):nth-child(even),
+.grid-element:nth-child(n + 9):nth-child(-n + 16):nth-child(odd),
+.grid-element:nth-child(n + 17):nth-child(-n + 24):nth-child(even),
+.grid-element:nth-child(n + 25):nth-child(-n + 32):nth-child(odd),
+.grid-element:nth-child(n + 33):nth-child(-n + 40):nth-child(even),
+.grid-element:nth-child(n + 41):nth-child(-n + 48):nth-child(odd),
+.grid-element:nth-child(n + 49):nth-child(-n + 56):nth-child(even),
+.grid-element:nth-child(n + 57):nth-child(-n + 64):nth-child(odd) {
+  background: rgb(136, 0, 255);
+  background: radial-gradient(
+    circle,
+    rgba(136, 0, 255, 1) 65%,
+    rgba(59, 3, 105, 1) 100%,
+    rgba(26, 4, 41, 1) 100%
+  );
+  border: 1px solid black;
+}
+
+/*CHESS PIECES*/
+.white,
+.black {
+  position: absolute;
+  font-size: 50px;
+  margin: 0;
+  border: none;
+  left: 4.77%;
+  top: -6;
+  bottom: 0;
+  transition: all 0.1s ease-in;
+}
+
+.white,
+.black {
+  color: #150322;
+}
+.white:hover,
+.black:hover {
+  transform: scale(1.2);
+}
+
+.grid-element:hover {
+  -webkit-filter: sepia(90%);
+  filter: sepia(90%);
+}
+
+/*Media query*/
+
+@media (max-height: 560px) {
+  .main-board {
+    width: 300px;
+    height: 300px;
+  }
+  .white,
+  .black {
+    font-size: 30px;
+  }
+}
+@media (max-width: 499px) {
+  .main-board {
+    width: 320px;
+    height: 320px;
+  }
+  .white,
+  .black {
+    font-size: 30px;
+  }
+}
+@media (max-width: 300px) {
+  .main-board {
+    width: 280px;
+    height: 280px;
+  }
+  .white,
+  .black {
+    font-size: 30px;
+  }
+}
