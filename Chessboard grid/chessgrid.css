@@ -56,9 +56,9 @@ h1 {
   );
   border: 1px solid #150322;
   position: relative;
-  /* display: flex;
+  display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 }
 .grid-element:nth-child(-n + 8):nth-child(even),
 .grid-element:nth-child(n + 9):nth-child(-n + 16):nth-child(odd),
@@ -85,9 +85,9 @@ h1 {
   font-size: 50px;
   margin: 0;
   border: none;
-  left: 4.77%;
+  /* left: 4.77%;
   top: -6;
-  bottom: 0;
+  bottom: 0; */
   transition: all 0.1s ease-in;
 }
 
