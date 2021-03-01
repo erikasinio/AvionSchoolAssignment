@@ -83,6 +83,7 @@ function handleResultValidation() {
     gameActive = false;
     btnRestart.classList.remove("hidden");
     historyBtn.classList.remove("hidden");
+    btnNext.classList.add("hidden");
     return;
   }
 
@@ -91,7 +92,7 @@ function handleResultValidation() {
     gameActive = false;
     btnRestart.classList.remove("hidden");
     historyBtn.classList.remove("hidden");
-
+    btnNext.classList.add("hidden");
     return;
   }
 
