@@ -122,27 +122,29 @@ function handleCellClick(clickedCellEvent) {
 
 // RESTART GAME
 function handleRestartGame() {
-  gameActive = true;
-  currentPlayer = null;
-  gameState = ["", "", "", "", "", "", "", "", ""];
-  newArray = [];
-  moves = 0;
-  newArrayLength = 0;
-  arrayMinusMoves = 0;
-  board = [];
-  statusDisplay.innerHTML = currentPlayerTurn();
-  document
-    .querySelectorAll(".cell")
-    .forEach((cell) => cell.classList.remove("X"));
-  document
-    .querySelectorAll(".cell")
-    .forEach((cell) => cell.classList.remove("O"));
-  mainScreen.classList.add("hidden");
-  startScreen.classList.remove("hidden");
-  btnRestart.classList.add("hidden");
-  historyBtn.classList.add("hidden");
-  btnNext.classList.remove("hidden");
-  btnPrevious.classList.remove("hidden");
+  // gameActive = true;
+  // currentPlayer = null;
+  // gameState = ["", "", "", "", "", "", "", "", ""];
+  // newArray = [];
+  // moves = 0;
+  // newArrayLength = 0;
+  // arrayMinusMoves = 0;
+  // board = [];
+  // statusDisplay.innerHTML = currentPlayerTurn();
+  // document
+  //   .querySelectorAll(".cell")
+  //   .forEach((cell) => cell.classList.remove("X"));
+  // document
+  //   .querySelectorAll(".cell")
+  //   .forEach((cell) => cell.classList.remove("O"));
+  // mainScreen.classList.add("hidden");
+  // startScreen.classList.remove("hidden");
+  // btnRestart.classList.add("hidden");
+  // historyBtn.classList.add("hidden");
+  // btnNext.classList.remove("hidden");
+  // btnPrevious.classList.remove("hidden");
+  // SHORTCUT FOR RESTART
+  location.reload();
 }
 
 document
