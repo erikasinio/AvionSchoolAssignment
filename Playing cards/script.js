@@ -70,9 +70,8 @@ suitCards.addEventListener("click", function () {
 // DEALS CARD - SHOWS NAME
 dealCards.addEventListener("click", function () {
   if (shuffled && deal) {
-    let randomNumber = Math.floor(Math.random() * newCards.length);
     if (newCards.length !== 0) {
-      let singleCard = newCards.splice(randomNumber, 1);
+      let singleCard = newCards.pop();
       console.log(singleCard);
       if (singleCard.toString().includes("♠")) {
         cardRank = "Spades";
