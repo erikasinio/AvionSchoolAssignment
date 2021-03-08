@@ -202,15 +202,20 @@ arrangeDown.addEventListener("click", function () {
 let fiveCards = [];
 let fiveCardsCol = [];
 dealFive.addEventListener("click", function () {
-  if (newCards.length > 5) {
-    for (let i = 0; i < 5; i++) {
-      fiveCards += newCards.pop();
-      displayCards.textContent = fiveCards.toString().replaceAll("-", "");
+  if (shuffled) {
+    if (newCards.length > 5) {
+      for (let i = 0; i < 5; i++) {
+        fiveCards += newCards.pop();
+        displayCards.textContent = fiveCards.toString().replaceAll("-", "");
+      }
+    } else {
+      displayCards.textContent = `${
+        newCards.length
+      } left. ----- ${newCards.toString().replaceAll("-", "")}`;
+      status.textContent = "Cards in deck is less than 5.";
     }
   } else {
-    displayCards.textContent = `${
-      newCards.length
-    } left. ----- ${newCards.toString().replaceAll("-", "")}`;
+    displayCards.textContent = "You must shuffle the cards first.";
   }
 });
 
