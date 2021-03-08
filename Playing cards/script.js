@@ -8,6 +8,7 @@ let dealCards = document.querySelector("#deal");
 let arrangeUp = document.querySelector("#value-ascending");
 let arrangeDown = document.querySelector("#value-descending");
 let status = document.querySelector("#status");
+let dealFive = document.querySelector("#deal-five");
 
 // VARIABLES
 let suits = ["A", "K", "Q", "J", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
@@ -198,6 +199,20 @@ arrangeDown.addEventListener("click", function () {
 //   for (let i = 0; i < 5; i++) {
 //     fiveCards += newCards.pop();
 //   }
+let fiveCards = [];
+let fiveCardsCol = [];
+dealFive.addEventListener("click", function () {
+  if (newCards.length > 5) {
+    for (let i = 0; i < 5; i++) {
+      fiveCards += newCards.pop();
+      displayCards.textContent = fiveCards.toString().replaceAll("-", "");
+    }
+  } else {
+    displayCards.textContent = `${
+      newCards.length
+    } left. ----- ${newCards.toString().replaceAll("-", "")}`;
+  }
+});
 
 //   if (
 //     fiveCards.split("A").length - 1 === 4 ||
