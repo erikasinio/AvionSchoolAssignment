@@ -2,6 +2,10 @@
 
 // DOM
 let displayCards = document.querySelector(".display-cards");
+let displayCardsSingle = document.querySelector(".display-cards-single");
+let displayCardsSingleContainer = document.querySelector(
+  ".card-container-small"
+);
 let shuffleCards = document.querySelector("#shuffle-cards");
 let suitCards = document.querySelector("#suit");
 let dealCards = document.querySelector("#deal");
@@ -11,7 +15,7 @@ let status = document.querySelector("#status");
 let dealFive = document.querySelector("#deal-five");
 
 // VARIABLES
-let suits = ["A", "K", "Q", "J", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+let suits = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 let ranks = ["♠", "♡", "♢", "♣"];
 let cards = [];
 
@@ -31,6 +35,7 @@ function sortToggle() {
 function showDeal() {
   dealtCards.push(...[` ${cardSuit} of ${cardRank}`]);
   displayCards.textContent = dealtCards;
+  displayCardsSingle.textContent = [` ${cardSuit} of ${cardRank}`];
 }
 
 // CREATE DECK
@@ -46,6 +51,7 @@ createDeck();
 // -------------------------EVENT LISTENERS-------------------------
 // SHUFFLE CARDS
 shuffleCards.addEventListener("click", function () {
+  displayCardsSingleContainer.classList.add("hidden");
   newCards = cards = cards.sort(() => Math.random() - 0.5);
   displayCards.textContent =
     newCards.length !== 0
@@ -57,6 +63,7 @@ shuffleCards.addEventListener("click", function () {
 
 // ARRANGE IN A SUIT
 suitCards.addEventListener("click", function () {
+  displayCardsSingleContainer.classList.add("hidden");
   if (shuffled) {
     sortedCards = newCards.sort();
     displayCards.textContent =
@@ -71,6 +78,7 @@ suitCards.addEventListener("click", function () {
 // DEALS CARD - SHOWS NAME
 dealCards.addEventListener("click", function () {
   if (shuffled && deal) {
+    displayCardsSingleContainer.classList.remove("hidden");
     if (newCards.length !== 0) {
       let singleCard = newCards.pop();
       console.log(singleCard);
@@ -151,6 +159,7 @@ arrangeUp.addEventListener("click", function () {
   } else {
     displayCards.textContent = "You must shuffle the cards first.";
   }
+  displayCardsSingleContainer.classList.add("hidden");
 });
 
 // ARRANGE CARDS IN DESCENDING ORDER
@@ -171,6 +180,7 @@ arrangeDown.addEventListener("click", function () {
   } else {
     displayCards.textContent = "You must shuffle the cards first.";
   }
+  displayCardsSingleContainer.classList.add("hidden");
 });
 
 // -------------------------OTHER CODES - KEPT FOR REFERENCE -------------------------
@@ -199,15 +209,20 @@ arrangeDown.addEventListener("click", function () {
 //   for (let i = 0; i < 5; i++) {
 //     fiveCards += newCards.pop();
 //   }
-let fiveCards = [];
 let fiveCardsCol = [];
 dealFive.addEventListener("click", function () {
   if (shuffled) {
-    if (newCards.length > 5) {
+    displayCardsSingleContainer.classList.remove("hidden");
+    if (newCards.length >= 5) {
+      let fiveCards = [];
       for (let i = 0; i < 5; i++) {
         fiveCards += newCards.pop();
-        displayCards.textContent = fiveCards.toString().replaceAll("-", "");
+        displayCardsSingle.textContent = fiveCards
+          .toString()
+          .replaceAll("-", "");
       }
+      fiveCardsCol.push(fiveCards);
+      displayCards.textContent = fiveCardsCol.toString().replaceAll("-", "");
     } else {
       displayCards.textContent = `${
         newCards.length

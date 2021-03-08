@@ -22,7 +22,10 @@ body {
   min-width: 50rem;
   height: fit-content;
   text-align: center;
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
+}
+.card-container-small {
+  min-width: 10rem;
 }
 
 .heading {
