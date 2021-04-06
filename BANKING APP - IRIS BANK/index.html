@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>IRIS BANK</title>
+  </head>
+  <body>
+    <!-- CUSTOM ALERT -->
+    <div id="confirm">
+      <div class="message">This is a warning message.</div>
+      <button class="yes">OK</button>
+    </div>
+    <!-- ----------------------HEADER---------------------- -->
+    <header class="header">
+      <div class="login-form container flex flex-sb-center">
+        <div class="logo flex flex-sb-center">
+          <img class="logo" src="IRISBANK LOGO.png" alt="logo" />
+        </div>
+
+        <!--HEADER - LOGIN FORM - FOR USER(MANAGER) -->
+        <div class="login">
+          <form
+            class="login-form form mr-1 flex flex-sb-center"
+            action="javascript:void(0);"
+          >
+            <div class="form-control">
+              <input
+                class="input-style"
+                type="text"
+                id="username-login"
+                placeholder="Enter your username"
+              />
+            </div>
+            <div class="form-control">
+              <input
+                class="input-style"
+                type="password"
+                id="password-login"
+                placeholder="Enter your password"
+              />
+            </div>
+            <div class="form-control">
+              <input
+                class="btn-login button button-purple"
+                type="button"
+                value="Login"
+              />
+            </div>
+          </form>
+        </div>
+
+        <!--HEADER - NAVIGATION - AFTER SUCCESSFUL LOGIN -->
+        <nav class="navbar flex display-none">
+          <ul class="flex mr-1">
+            <li class="home-tab current">Home</li>
+            <li class="profile-tab current display-none">Profile</li>
+          </ul>
+          <button class="new-account button button-purple">New acccount</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ----------------------MAIN---------------------- -->
+    <main class="container">
+      <!--MAIN - ACCOUNTS TABLE -->
+      <div class="accounts-container flex flex-col display-none">
+        <div class="search-container">
+          <form action="javascript:void(0);">
+            <input
+              class="input-style"
+              type="text"
+              placeholder="Search.."
+              name="search"
+              id="search"
+            />
+            <i class="fa fa-search"></i>
+          </form>
+        </div>
+
+        <div class="account-table">
+          <table class="table" id="users-table">
+            <thead>
+              <tr class="table-headings">
+                <th>Name</th>
+                <th>Username</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!--MAIN - CREATE ACCOUNT -->
+      <form
+        class="form-container form-create-account mr-1 flex flex-col flex-center-center display-none"
+        action="javascript:void(0);"
+      >
+        <div class="form-control">
+          <label for="name">Name</label>
+          <input
+            class="input-style"
+            type="text"
+            id="name-account"
+            name="name"
+            placeholder="Enter a name"
+            required
+          />
+        </div>
+        <div class="form-control">
+          <label for="username"
+            >Username
+            <span class="error display-none"
+              >Username already exist</span
+            ></label
+          >
+          <input
+            class="input-style"
+            type="text"
+            id="username-account"
+            name="username"
+            placeholder="Enter a username"
+            required
+          />
+        </div>
+        <!-- PASSWORD/PIN TO BE ADDED LATER IF PROJECT IS FINISHED -->
+        <!-- <div class="form-control">
+          <label for="password">Password</label>
+          <input
+            class="input-style"
+            type="password"
+            id="password-account"
+            name="password"
+            placeholder="Enter a password"
+          />
+        </div>
+        <div class="form-control">
+          <label for="con-password">Password</label>
+          <input
+            class="input-style"
+            type="password"
+            id="con-password-account"
+            name="con-password"
+            placeholder="Confirm password"
+          />
+        </div> -->
+        <div class="form-control">
+          <label for="balance">Initial balance</label>
+          <input
+            class="input-style"
+            type="number"
+            id="balance-account"
+            name="balance"
+            placeholder="Minimum amount is ₱5000"
+            min="5000"
+            required
+          />
+        </div>
+        <div class="form-control center">
+          <input
+            class="create-account button button-purple"
+            type="submit"
+            value="Create account"
+          />
+        </div>
+      </form>
+
+      <!--MAIN - ACCOUNTS PROFILE -->
+      <div class="accounts-profile display-none">
+        <!-- ACCOUNTS INFO -->
+        <div class="grid-item accounts-info">
+          <div class="account-details-head center">
+            <h2 class="account-detail">Account details</h2>
+          </div>
+          <div class="account-name">
+            <p class="account-label acc-name">
+              Name: <span class="sp-account-name bold"></span>
+            </p>
+          </div>
+          <div class="account-username">
+            <p class="account-label acc-username">
+              Username:
+              <span class="sp-account-username bold"></span>
+            </p>
+          </div>
+          <div class="account-balance">
+            <p class="account-label balance">
+              Balance: <span class="sp-account-balance bold"></span>
+            </p>
+          </div>
+        </div>
+        <!-- ACCOUNTS TRANSACTION -->
+        <div class="grid-item accounts-trans flex flex-col">
+          <form class="deposit-form" action="javascript:void(0)">
+            <div class="form-control full-width">
+              <label for="deposit">Deposit</label>
+              <div class="deposit-inputs flex">
+                <input
+                  class="input-style"
+                  type="number"
+                  id="deposit"
+                  name="deposit"
+                  placeholder="Minimum deposit amount of 500"
+                  min="500"
+                  required
+                />
+                <div class="form-control width-auto">
+                  <input
+                    class="deposit button button-dark button-sm ml-1"
+                    type="submit"
+                    value="Deposit"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <form class="withdraw-form" action="javascript:void(0)">
+            <div class="form-control full-width">
+              <label for="withdraw "
+                >Withdraw
+                <span class="error withdraw-error display-none"
+                  >Insufficient funds</span
+                ></label
+              >
+
+              <div class="withdraw-inputs flex">
+                <input
+                  class="input-style"
+                  type="number"
+                  id="withdraw"
+                  name="withdraw"
+                  placeholder="Minimum withdrawal amount of 100"
+                  min="100"
+                  required
+                />
+
+                <div class="form-control width-auto">
+                  <input
+                    class="withdraw button button-dark button-sm ml-1"
+                    type="submit"
+                    value="Withdraw"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <form class="transfer-money" action="javascript:void(0)">
+            <div class="form-control full-width">
+              <label for="transfer">Transfer</label>
+              <div class="transfer-inputs flex">
+                <input
+                  class="input-style"
+                  type="number"
+                  id="transfer-amount"
+                  name="transfer-amount"
+                  placeholder="Minimum of 300"
+                  min="300"
+                  required
+                />
+                <p class="to">to</p>
+                <input
+                  class="input-style"
+                  type="text"
+                  id="recipient-username"
+                  name="recipient-username"
+                  placeholder="Enter recipient username"
+                  required
+                />
+                <div class="form-control width-auto">
+                  <input
+                    class="button button-dark button-sm ml-1"
+                    type="submit"
+                    value="Transfer"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- ACCOUNTS TRANSACTION HISTORY -->
+        <div class="grid-item accounts-history">
+          <table class="acct-history table">
+            <thead>
+              <tr class="table-headings">
+                <th>Activity</th>
+                <th>Amount</th>
+                <th>Running Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>2,000</td>
+                <td>5,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
