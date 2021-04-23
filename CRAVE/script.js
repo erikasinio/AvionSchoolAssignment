@@ -234,7 +234,12 @@ function addMealToModal(meal) {
 <div class="videoContainer" id="video">
   <div class="container-vid">
     <iframe
-      class="responsive-iframe"
+      class="responsive-iframe" 
+      allowfullscreen="allowfullscreen"
+        mozallowfullscreen="mozallowfullscreen" 
+        msallowfullscreen="msallowfullscreen" 
+        oallowfullscreen="oallowfullscreen" 
+        webkitallowfullscreen="webkitallowfullscreen"
      src="${(function myFunction() {
        var str = meal.strYoutube;
        var res = str.split("=").slice(1);
@@ -243,9 +248,9 @@ function addMealToModal(meal) {
      })()}"
     ></iframe>
   </div>
-  <p class="card-excerpt">
-    <strong class="color-dark">Ingredients:</strong> ${measurements
-      .map((m) => `<span>${m}</span>`)
+  <p class="card-excerpt center">
+    <strong class="color-dark">Ingredients:</strong> </br> ${measurements
+      .map((m) => `<span class="ing">${m}</span>`)
       .join("")}
   </p>
   <p class="card-excerpt">
@@ -259,7 +264,7 @@ function addMealToModal(meal) {
   document
     .querySelector(`a[data-mealID="${meal.idMeal}"]`)
     .setAttribute("rel", "modal:open");
-  // --------------THIS TRIGGERS
+  // --------------THIS TRIGGERS THE ELEMENT WITH THE "rel:modal:open" TO OPEN THE MODAL
   document.getElementById("open").click();
 }
 
